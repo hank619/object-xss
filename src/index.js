@@ -6,6 +6,9 @@
 var xss = require("xss");
 
 function objectXss(obj, options) {
+  if (!obj) {
+    return obj;
+  }
   const isString = typeof obj === 'string';
   if (isString) {
     return xss(obj, options);

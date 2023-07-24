@@ -5,6 +5,8 @@
  */
 var objectXss = require('./index');
 
+console.log(objectXss(undefined));
+console.log(objectXss(null));
 console.log(objectXss(`<html>test</html>`));
 console.log(objectXss({
   html: `<html>html</html>`,
