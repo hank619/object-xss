@@ -1,0 +1,11 @@
+{
+  "name": "object-xss",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "repository": "https://github.com/matrixyf/object-xss.git",
+  "author": "zhanghong <hong.zhang@axinan.com>",
+  "license": "MIT",
+  "dependencies": {
+    "xss": "^1.0.14"
+  }
+}
