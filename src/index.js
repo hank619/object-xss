@@ -8,9 +8,9 @@ var xss = require("xss");
 function objectXss(obj, options) {
   const isString = typeof obj === 'string';
   if (isString) {
-    return xss(obj);
+    return xss(obj, options);
   }
-  return processValues(obj);
+  return processValues(obj, options);
 }
 
 function processValues(obj) {

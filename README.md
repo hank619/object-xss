@@ -8,9 +8,12 @@
 An enhanced library of [js-xss](`https://github.com/leizongmin/js-xss`) to handle object value
 
 ## Installing
+```
 yarn add object-xss
+```
 
 ## Usage
+```
 import objectXss from 'objectXss';
 
 const handled = objectXss(obj);
