@@ -5,21 +5,21 @@
  */
 var xss = require("xss");
 
-function objectXss(obj, options) {
-  if (!obj) {
-    return obj;
+function objectXss(input, options) {
+  if (!input) {
+    return input;
   }
-  const isString = typeof obj === "string";
+  const isString = typeof input === "string";
   if (isString) {
-    return xss(obj, options);
+    return xss(input, options);
   }
-  return processValues(obj, options);
+  return processValues(input, options);
 }
 
-function processValues(obj, options) {
-  const isArray = obj instanceof Array;
+function processValues(input, options) {
+  const isArray = input instanceof Array;
   const result = isArray ? [] : {};
-  for (const [key, value] of Object.entries(obj)) {
+  for (const [key, value] of Object.entries(input)) {
     result[key] =
       typeof value === "object"
         ? processValues(value, options)
