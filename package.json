@@ -6,7 +6,13 @@
   "repository": "https://github.com/matrixyf/object-xss.git",
   "author": "zhanghong <hong.zhang@axinan.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "xss": "^1.0.14"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
   }
 }
