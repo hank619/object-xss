@@ -1,6 +1,6 @@
 {
   "name": "object-xss",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "repository": "https://github.com/matrixyf/object-xss.git",
