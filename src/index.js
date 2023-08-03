@@ -6,26 +6,26 @@
 var xss = require("xss");
 
 function objectXss(input, options) {
-  if (!input) {
-    return input;
-  }
-  const isString = typeof input === "string";
-  if (isString) {
+  // null and undefined
+  if (input === null || input === undefined) return input;
+
+  // string
+  if (typeof input === "string") {
     return xss(input, options);
   }
-  return processValues(input, options);
-}
 
-function processValues(input, options) {
-  const isArray = input instanceof Array;
-  const result = isArray ? [] : {};
-  for (const [key, value] of Object.entries(input)) {
-    result[key] =
-      typeof value === "object"
-        ? processValues(value, options)
-        : xss(value, options);
+  // object and array
+  if (typeof input === "object") {
+    const isArray = input instanceof Array;
+    const result = isArray ? [] : {};
+    for (const [key, value] of Object.entries(input)) {
+      result[key] = objectXss(value, options);
+    }
+    return result;
   }
-  return result;
+
+  // basic type, like number, boolean
+  return input;
 }
 
 module.exports = objectXss;
